@@ -1,6 +1,6 @@
 # Frame Animation timeupdate plugin for video.js
 
-This plugin acts as a simple extension to [videojs][videojs] to enable videos to send `timeupdate` events at frameAninmation rates (ie, 60fps) when a video is playing.
+This plugin acts as a simple extension to [videojs][videojs] (6.0+) to enable videos to send `timeupdate` events at frameAninmation rates (ie, 60fps) when a video is playing.
 
 ## Installation
 
@@ -15,9 +15,11 @@ video = videojs("my-video");
 
 video.enableFrameAnimationUpdate();
 
-window.video.on('timeupdate', function() {
+video.on('timeupdate', function() {
   console.log('frame!');
 });
 ```
 
 `timeupdate` events will be emitted as normal from the player; however, when the video is actively playing back, they'll be emitted at frameAnimation rates.
+
+[videojs]: http://videojs.com/
